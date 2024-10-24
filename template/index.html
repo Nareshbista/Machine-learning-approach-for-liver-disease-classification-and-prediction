@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Liver Disease</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgba(252, 17, 107, 0.74);
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(56, 15, 238);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #4d00dbc5;
+  padding: 10px;
+}
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px; /* Space between the form and copyright */
+        }
+    </style>
+
+</style>
+</head>
+<body>
+
+  <div class="navbar">
+    <!--<a href="/">For Patients</a>-->
+    <!--<a href="https://github.com/Nareshbista">ABOUT</a>-->
+    <!--<a href="https://github.com/Nareshbista">GITHUB</a>-->
+    <!--<a href="https://www.linkedin.com/in/naresh-bista/">LINKEDIN</a>-->
+
+    <div class="dropdown">
+      <button class="dropbtn">ABOUT
+          <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+          <p>Our project focuses on developing an innovative solution for predicting liver disease,
+             aiming to assist healthcare professionals in making informed decisions.</p>
+    
+      </div>
+  </div>
+
+
+  <div class="dropdown">
+    <button class="dropbtn">FOR PATIENTS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://www.mayoclinic.org/diseases-conditions/liver-problems/symptoms-causes/syc-20374502">Symptoms</a>
+      <a href="https://starhospitals.in/lp/gastroenterology/index.php">Hospital</a>
+      <a href="https://www.drgovindverma.com/">Doctor</a>
+      </div>
+      </div>
+
+
+    <div class="dropdown">
+      <button class="dropbtn">CONTACT US
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Email us at: info@predictliverdisease.in</a>
+        <a href="https://www.linkedin.com/in/naresh-bista/">LinkedIn</a>
+        <a href="https://www.instagram.com/nareshbista247?igsh=MTQwcTgyNDZ4eHcw">Instagram</a>
+        
+        
+      </div>
+    </div> 
+  </div>
+
+</head>
+<body>
+    
+    </nav>
+    <h1>Predict Liver Disease</h1>
+    <form method="post" action="{{ url_for('predict') }}">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter age between 20 and 80 years" min="20" max="80" required>
+        <br>
+        <label for="gender">Gender:</label>
+        <input type="number" id="gender" name="gender" placeholder="Enter 0 for Male, 1 for Female" min="0" max="1" required>
+        <br>
+        <label for="bmi">BMI (Body Mass Index):</label>
+        <input type="number" id="bmi" name="bmi" placeholder="Enter BMI between 15 and 40" min="15" max="40" step="0.1" required>
+        <br>
+        <label for="alcohol_consumption">Alcohol Consumption:</label>
+        <input type="number" id="alcohol_consumption" name="alcohol_consumption" placeholder="Enter alcohol consumption in units per week (0 to 20)" min="0" max="20" required>
+        <br>
+        <label for="smoking">Smoking:</label>
+        <input type="number" id="smoking" name="smoking" placeholder="Enter 0 for No, 1 for Yes" min="0" max="1" required>
+        <br>
+        <label for="genetic_risk">Genetic Risk:</label>
+        <input type="number" id="genetic_risk" name="genetic_risk" placeholder="Enter 0 for Low, 1 for Medium, 2 for High" min="0" max="2" required>
+        <br>
+        <label for="physical_activity">Physical Activity:</label>
+        <input type="number" id="physical_activity" name="physical_activity" placeholder="Enter physical activity in hours per week (0 to 10)" min="0" max="10" required>
+        <br>
+        <label for="diabetes">Diabetes:</label>
+        <input type="number" id="diabetes" name="diabetes" placeholder="Enter 0 for No, 1 for Yes" min="0" max="1" required>
+        <br>
+        <label for="hypertension">Hypertension:</label>
+        <input type="number" id="hypertension" name="hypertension" placeholder="Enter 0 for No, 1 for Yes" min="0" max="1" required>
+        <br>
+        <label for="liver_function_test">Liver Function Test:</label>
+        <input type="number" id="liver_function_test" name="liver_function_test" placeholder="Enter liver function test value between 20 and 100" min="20" max="100" required>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+    <footer>
+      <p>Copyright © 2024 All Rights Reserved by Naresh Bista</p>
+  </footer>
+  
+</body>
+</html>
