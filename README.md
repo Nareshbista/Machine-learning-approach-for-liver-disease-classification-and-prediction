@@ -11,5 +11,5 @@ Project aims to develop a machine learning model that accurately predicts liver 
 1. Python (Pandas, Numpy, Matplotlib)
 2. Machine learning
 3. Flask(A Python web framework used for building the backend of the application)
-4. HTML/CSS/JavaScript(for the fronted)
+4. HTML/CSS(for the fronted)
    
