@@ -15,4 +15,7 @@ Project aims to develop a machine learning model that accurately predicts liver 
 
 ![image](https://github.com/user-attachments/assets/dabe0fe8-d5fb-4022-8e1f-11505c4f6be2)
 
+![image](https://github.com/user-attachments/assets/735d9235-b274-454b-bc81-c96c28a617ab)
+
+
    
